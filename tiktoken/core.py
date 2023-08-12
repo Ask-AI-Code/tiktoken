@@ -206,7 +206,7 @@ class Encoding:
             if not isinstance(disallowed_special, frozenset):
                 disallowed_special = frozenset(disallowed_special)
             if _special_token_regex(disallowed_special).search(text):
-                match = _special_token_regex(disallowed_special).search(text):
+                match = _special_token_regex(disallowed_special).search(text)
                 raise_disallowed_special_token(match.group())
 
         return self._core_bpe.encode_with_unstable(text, allowed_special)
