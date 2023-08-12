@@ -4,6 +4,7 @@ import functools
 from concurrent.futures import ThreadPoolExecutor
 from typing import AbstractSet, Collection, NoReturn, Optional, Union
 from typing_extensions import Literal
+from cached_property import cached_property
 
 import regex
 
@@ -335,7 +336,7 @@ class Encoding:
     def eot_token(self) -> int:
         return self._special_tokens["<|endoftext|>"]
 
-    @functools.cached_property
+    @cached_property
     def special_tokens_set(self) -> set[str]:
         return set(self._special_tokens.keys())
 
